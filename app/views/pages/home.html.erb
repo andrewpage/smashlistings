@@ -1,3 +1,6 @@
 <div class="container">
-	Welcome to smashlistings.<br /> Go fuck yourself.
+	Welcome to smashlistings 
+	<% if user_signed_in? %>
+	, <%= current_user.email %>.
+	<% end %><br /> Go fuck yourself.
 </div>
