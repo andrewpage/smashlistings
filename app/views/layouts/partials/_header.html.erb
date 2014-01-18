@@ -1,12 +1,21 @@
-<center>
-<b>SmashListings</b><br />
-<%= link_to "Home", root_path %> | 
-
-<% if user_signed_in? %>
-	Signed In |
-	<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-<% else %>
-	<%= link_to "Sign in", new_user_session_path %> |
-	<%= link_to "Sign up", new_user_registration_path %>
-<% end %>
-</center>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="../" class="navbar-brand">SmashListings</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Events', '#' %></li> 
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'Sign in', new_user_session_path %></li>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        </ul>
+      </div>
+    </div>
+</div>
