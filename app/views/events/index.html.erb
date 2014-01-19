@@ -25,4 +25,6 @@
 
 <% end %>
 
-<%= link_to "Host event", new_event_path, class: 'btn btn-primary' %>
+<% if user_signed_in? %>
+	<%= link_to "Host event", new_event_path, class: 'btn btn-primary' %>
+<% end %>
