@@ -1,0 +1,13 @@
+<h1>Events</h1>
+
+<% if @events.empty? %>
+
+	<i>No events listed.</i>
+
+<% end %>
+
+<% @events.each do |e| %>
+	
+	<%= e.name %> is hosted by <%= full_name(User.find(e.host_id)) %>. It's at <%= e.address %>.
+
+<% end %>
