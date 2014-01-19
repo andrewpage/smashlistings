@@ -27,13 +27,15 @@ class EventsController < ApplicationController
 	end
 
 	def map_api
-		min_lat = params['minLat']
-		max_lat = params['maxLat']
+		@min_lat = params['minLat']
+		@max_lat = params['maxLat']
 
-		min_lng = params['minLng']
-		max_lng = params['maxLng']
+		@min_lng = params['minLng']
+		@max_lng = params['maxLng']
 
-		print "MinLat: %s, MaxLat: %s. MinLng: %s, MaxLng: %s" % [min_lat, max_lat, min_lng, max_lng]
+		@entries = Event.find_by_sql("SELECT * FROM events WHERE latitude > -300 AND latitude < 300 AND longitude > -300 AND longitude < 300" % [@min_lat, @max_lat, @min_lng, @max_lng])
+		
+		render :json => @entries.to_json
 	end
 
 	private
