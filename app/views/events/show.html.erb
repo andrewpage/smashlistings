@@ -10,5 +10,7 @@ Max occupancy: <%= @event.max_occup %><br />
 <% 
 	url = "http://maps.googleapis.com/maps/api/staticmap?center=%s,%s&zoom=14&size=400x400&sensor=false" % [@event.latitude, @event.longitude]
 %>
-
+<% if current_user.id == @event.host_id %> 
+	<%= link_to "Delete event", event_path, method: :delete, class: 'btn btn-danger' %>
+<% end %><br /><br />
 <img src="<%= url %>" />

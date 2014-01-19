@@ -2,9 +2,9 @@
 
 <% if @events.empty? %>
 
-	<i>No events listed.</i>
+	<i>No events listed.</i><br /><br />
 
-<% end %>
+<% else %>
 
 <table class="table">
 	<tr>
@@ -22,5 +22,7 @@
 		</tr>
 	<% end %>
 </table>
+
+<% end %>
 
 <%= link_to "Host event", new_event_path, class: 'btn btn-primary' %>

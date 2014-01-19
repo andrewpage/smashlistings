@@ -1,9 +1,8 @@
-<% content_for :header do %>
-  <%= javascript_include_tag 'admin' %>  
-<% end %>
 <h1>Find nearby events</h1>
+ 
+<%= form_tag('/events', method: :get) do %>
+	Address: <%= text_field_tag :address %><br /><br />
+	Radius: <%= text_field_tag :radius %><br /><br />
 
-Address: <input id="address"> <br />
-Radius: <input id="radius"> <br />
-<button onClick="update()">Check</button>
-<div id="map-canvas" style="height=100%; width=100%;"> </div>
+	<%= button_tag :Find %>
+<% end %>

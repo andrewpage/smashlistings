@@ -2,9 +2,11 @@
 <img src = "http://i.imgur.com/J0yPLiq.png"</img src>
         </div>
 <p style="text-align: center;"><font size = "20">Welcome to Smashlistings your number #1 source for finding competition in your community.</font></p>
+
 <table cellspacing = "20">
 	<tr>
     <td>
+    	<% if !Event.all.empty? %>
     <table class="table">
 		<tr>
 		  <th>Name</th>
@@ -21,6 +23,7 @@
 		  </tr>
 		 <% end %>
 	</table>
+<% end %>
 </td>
 <td>
 <script src="http://www.reddit.com/r/smashbros/hot/.embed?limit=5&t=all&bgcolor=282828 " type="text/javascript"></script>

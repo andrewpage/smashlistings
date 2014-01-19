@@ -1,6 +1,15 @@
 class EventsController < ApplicationController
+
+	before_filter :authenticate_user!, except: [:index, :show]
+
 	def index
-		@events = Event.all
+		if params['address'].nil?
+			@events = Event.all
+		else
+			radius = params['radius'].nil? ? 50 : params['radius']
+
+			@events = Event.near(params['address'], radius)
+		end
 	end
 
 	def show
@@ -39,6 +48,14 @@ class EventsController < ApplicationController
 	end
 
 	def nearby
+	end
+
+	def destroy
+		@event = Event.find(params[:id])
+
+		@event.destroy
+
+		redirect_to events_path
 	end
 
 	private

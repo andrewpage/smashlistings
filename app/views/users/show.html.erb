@@ -1,4 +1,23 @@
 <h1><%= full_name(@user) %></h1>
 
-Email: <%= @user.email %><br />
-Address: <%= @user.address %>, <%= @user.city %>, <%= @user.state %>, <%= @user.zip %>, <%= @user.country %>
+<h2>My events</h2>
+
+<% myevents = Event.where(:host_id => @user.id) %>
+
+<% if myevents.empty? %>
+	<i>You don't have any events, <%= link_to 'want to make one?', new_event_path %></i>
+<% else %>
+	<table class="table">
+		<tr>
+			<th><center>Event name</center></th>
+			<th><center>Capacity</center></th>
+		</tr>
+
+		<% myevents.all.each do |event| %>
+		<tr>
+			<td><%= link_to event.name, event %></td>
+			<td><%= !event.attendees.nil? ? event.attendees.count : 0 %> / <%= event.max_occup %></td>
+		</tr>
+		<% end %>
+	</table>
+<% end %>
