@@ -17,6 +17,8 @@ gem 'devise'
 
 gem 'simple_form'
 
+gem 'geocoder'
+
 group :doc do
   gem 'sdoc', require: false
 end

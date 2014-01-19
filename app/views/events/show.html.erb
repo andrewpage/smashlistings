@@ -1,0 +1,14 @@
+<h1><%= @event.name %></h1>
+
+Name: <%= @event.name %><br />
+Date: <%= @event.time %><br />
+Address: <%= @event.address %><br />
+Max occupancy: <%= @event.max_occup %><br />
+
+<br />
+
+<% 
+	url = "http://maps.googleapis.com/maps/api/staticmap?center=%s,%s&zoom=14&size=400x400&sensor=false" % [@event.latitude, @event.longitude]
+%>
+
+<img src="<%= url %>" />

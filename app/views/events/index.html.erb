@@ -6,8 +6,21 @@
 
 <% end %>
 
-<% @events.each do |e| %>
-	
-	<%= e.name %> is hosted by <%= full_name(User.find(e.host_id)) %>. It's at <%= e.address %>.
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Address</th>
+		<th>Date/time</th>
+		<th>Max occupancy</th>
+	</tr>
+	<% @events.each do |e| %>
+		<tr>
+			<td><%= link_to e.name, e %></td>
+			<td><%= e.address %></td>
+			<td><%= e.time %></td>
+			<td><%= e.max_occup %></td>
+		</tr>
+	<% end %>
+</table>
 
-<% end %>
+<%= link_to "Host event", new_event_path, class: 'btn btn-primary' %>

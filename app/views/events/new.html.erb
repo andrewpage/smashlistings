@@ -1,0 +1,13 @@
+<%= simple_form_for @event do |f| %>
+	
+	<%= f.input :name %>
+	<%= f.input :address %>
+	<%= f.input :time, :as => :date, start_year: Date.today.year + 2,
+                              end_year: Date.today.year, order: [:month, :day, :year] %>
+    <%= f.input :max_occup, label: 'Max occupancy' %>
+
+    <%= f.hidden_field :host_id, value: @user.id %>
+
+	<%= f.submit 'Host', class: 'btn btn-primary' %>
+
+<% end %>
