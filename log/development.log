@@ -56477,3 +56477,183 @@ Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:07 -0800
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:07 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-19 08:43:16 -0800
+Processing by PagesController#home as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered pages/home.html.erb within layouts/application (2.9ms)
+  Rendered layouts/partials/_shim.html.erb (8.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/partials/_header.html.erb (2.2ms)
+  Rendered layouts/partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/admin/script.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/jquery-1.10.2.min.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/admin/JQuery.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:17 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-19 08:43:23 -0800
+Processing by PagesController#home as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered pages/home.html.erb within layouts/application (3.7ms)
+  Rendered layouts/partials/_shim.html.erb (8.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/partials/_header.html.erb (2.2ms)
+  Rendered layouts/partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/admin/JQuery.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/admin/script.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/jquery-1.10.2.min.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:24 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+Processing by PagesController#home as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered pages/home.html.erb within layouts/application (3.1ms)
+  Rendered layouts/partials/_shim.html.erb (8.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/partials/_header.html.erb (2.7ms)
+  Rendered layouts/partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/admin/JQuery.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/admin/script.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:31 -0800
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:32 -0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:32 -0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:32 -0800
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:32 -0800
+
+
+Started GET "/assets/jquery-1.10.2.min.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:32 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-19 08:43:32 -0800
