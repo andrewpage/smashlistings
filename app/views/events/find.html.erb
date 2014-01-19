@@ -2,7 +2,7 @@
  
 <%= form_tag('/events', method: :get) do %>
 	Address: <%= text_field_tag :address %><br /><br />
-	Radius: <%= text_field_tag :radius %><br /><br />
+	Radius (mi): <%= text_field_tag :radius %><br /><br />
 
 	<%= button_tag :Find %>
 <% end %>
