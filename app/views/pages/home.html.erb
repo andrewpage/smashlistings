@@ -1,3 +1,29 @@
 <h1>SmashListings</h1>
-
-Your premiere source for lists of people who are DTF.
+ 
+<img src = "http://i.imgur.com/J0yPLiq.png"</img src>
+        </div>
+<p>Welcome to Smashlistings your number #1 source for finding competition in your community.</p>
+<table cellspacing = "20">
+	<tr>
+    <td>
+    <table class="table">
+		<tr>
+		  <th>Name</th>
+		  <th>Address</th>
+		  <th>Date/time</th>
+		  <th>Max occupancy</th>
+		</tr>
+		<% Event.all.each do |e| %>
+		  <tr>
+		    <td><%= link_to e.name, e %></td>
+		    <td><%= e.address %></td>
+		    <td><%= e.time %></td>
+		    <td><%= e.max_occup %></td>
+		  </tr>
+		 <% end %>
+	</table>
+</td>
+<td>
+<script src="http://www.reddit.com/r/smashbros.embed?limit=5" type="text/javascript"></script>  
+</td>
+</tr>
