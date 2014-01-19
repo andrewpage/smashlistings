@@ -5,27 +5,27 @@
 
 <table class="table">
 	<tr>
-    <td>
-    	<% if !Event.all.empty? %>
-    <table class="table">
-		<tr class="yolo">
-		  <th>Name</th>
-		  <th>Address</th>
-		  <th>Date/time</th>
-		  <th>Max occupancy</th>
-		</tr>
-		<% Event.all.each do |e| %>
-		  <tr>
-		    <td><%= link_to e.name, e %></td>
-		    <td><%= e.address %></td>
-		    <td><%= e.time %></td>
-		    <td><%= e.max_occup %></td>
-		  </tr>
-		 <% end %>
-	</table>
-<% end %>
-</td>
-<td>
-<script src="http://www.reddit.com/r/smashbros/hot/.embed?limit=5&t=all&bgcolor=282828 " type="text/javascript"></script>
-</td>
-</tr>
+    	<td>
+    		<% if !Event.all.empty? %>
+	   			<table class="table">
+					<tr class="yolo">
+				  		<th>Name</th>
+				 		<th>Address</th>
+				  		<th>Date/time</th>
+				  		<th>Max occupancy</th>
+					</tr>
+					<% Event.all.each do |e| %>
+				 		<tr>
+				    		<td><%= link_to e.name, e %></td>
+				    		<td><%= e.address %></td>
+				    		<td><%= e.time %></td>
+				   			<td><%= e.max_occup %></td>
+				  		</tr>
+				 	<% end %>
+				</table>
+			<% else %>
+				<h2>No events!</h2>
+			<% end %>
+		</td>
+	</tr>
+</table>
