@@ -19,6 +19,8 @@ gem 'simple_form'
 
 gem 'geocoder'
 
+gem 'rack-cors'
+
 group :doc do
   gem 'sdoc', require: false
 end

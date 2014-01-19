@@ -25,31 +25,38 @@ function distance(lat1, lat2, lng1, lng2) {
 	var d = R * c;
 	return d;
 }
+
 var map;
 var geocoder;
 var userLat;
 var userLng;
 var radius;
-function initialize(){
-	geocoder = new google.maps.Geocoder();
-	var mapOptions = {
-		center: new google.maps.LatLng(38.169460, -97.106696),
-		zoom: 4
-	};
-	map = new google.maps.Map(document.getElementById("map-canvas"),
-		mapOptions);
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(38.725968, -97.942058);
+  var mapOptions = {
+    zoom: 4,
+    center: latlng
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
+google.maps.event.addDomListener(window, 'load', initialize);
 function update() {
 	//$.getJSON('http://www.smashlistings.com/map_api?minLat=' + minLat + '&maxLat=' + maxLat + '&minLng=' + minLng + '&maxLng=' + maxLng, function (json) {
 	var address = document.getElementById("address").value;
 	geocoder.geocode( {'address' : address}, function(results, status) {
-		if (status == google.maps.GeocoderStatus.OK) {
-			userLat = results[0].geometry.location.latitude;
-			userLng = results[0].geometry.location.longitude;
-		}
-	})
+		userLat = results[0].geometry.location.latitude;
+		userLng = results[0].geometry.location.longitude;
+	});
+	radius = document.getElementById("radius").value;
+	console.log(userLat);
+	var minLat = userLat - changeInLatitude(radius);
+	var maxLat = userLat + changeInLatitude(radius);
+	var minLng = userLng - changeInLongitude(userLat, radius);
+	var maxLng = userLng + changeInLongitude(userLat, radius);
+	var url = 'http://www.smashlistings.com/map_api?minLat=' + minLat + '&maxLat=' + maxLat + '&minLng=' + minLng + '&maxLng=' + maxLng;
 	$.ajax({
-        url: 'http://www.smashlistings.com/map_api.json?minLat=0&maxLat=100&minLng=-200&maxLng=0',
+        url: url,
         dataType: 'json',
         success: function(json){
             work(json);
@@ -58,12 +65,11 @@ function update() {
 		alert("Error: " + jqxhr + " - " + error + " - " + textStatus);
 	});
 }
+
+
+
 function work(json) {
-	radius = document.getElementById("radius").value;
-	var minLat = userLat - changeInLatitude(radius);
-	var maxLat = userLat + changeInLatitude(radius);
-	var minLng = userLng - changeInLongitude(userLat, radius);
-	var maxLng = userLng + changeInLongitude(userLat, radius);
+	console.log("TEST");
 	var events = new Array();
 	$.each(json, function (i, event) {
 		events.push(event);
@@ -94,14 +100,14 @@ function work(json) {
 			title: events[i].name
 		});
 		string = '<div id="content">' +
-			'<div id="siteNotice">' +
-			'</div>' +
+			//'<div id="siteNotice">' +
+			//'</div>' +
 			'<h1 id="firstHeading" class="firstHeading">' +
 			events[i].name + '</h1>' + 
 			'<div id="bodyContent">' +
 			'<p>' +
-			'DESCRIPTION' + '</p>' + '<br />'
-			'a href="http://www.smashlistings.com/events/' + 
+			events[i].time + '</p>' + '<br />'
+			'<a href="http://www.smashlistings.com/events/' + 
 			events[i].id + '">' +
 			'LINK' +
 			'</a>' +
@@ -113,7 +119,18 @@ function work(json) {
 				infoWindow.setContent(strings[i]);
 				infoWindow.open(map, marker);
 			}
-		})(marker, i));
+		}));
 	}
+	console.log("TEST");
+	//  Make an array of the LatLng's of the markers you want to show
+	//  Create a new viewpoint bound
+	var bounds = new google.maps.LatLngBounds ();
+	bounds.extend (userLat, userLng);
+	//  Go through each...
+	for (var i = 0; i < events.length; i++) {
+	  //  And increase the bounds to take this point
+	  bounds.extend (new google.maps.LatLng(events[i].latitude, events[i].longitude));
+	}
+	//  Fit these bounds to the map
+	map.fitBounds (bounds);
 }
-google.maps.event.addDomListener(window, 'load', initialize);

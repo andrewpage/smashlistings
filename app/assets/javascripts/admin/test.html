@@ -1,20 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
+		<style>
+	      html, body, #map-canvas {
+	        height: 100%;
+	        margin: 0px;
+	        padding: 0px
+	      }
+	     </style>
 		<script type="text/javascript"
-		  src="JQuery.js">
+		 	src="JQuery.js">
 		</script>
 		<script type="text/javascript"
-    	  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdJZtxDGjqTz3P245H_4irStvcwkufV3Y&sensor=true">
+    	  	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsqr08iW6WGGiW4HCuqfo8ZelRQN8ePrw&sensor=true">
 		</script>
 		<script type="text/javascript"
 			src="script.js">
 		</script>
 	</head>
 	<body>
-		Address: <input id="address"> <br />
-		Radius: <input id="radius"> <br />
-		<button onClick="update()">Check</button>
-		<div id="map-canvas" style="height=100%; width=100%;"> </div>
+		Address: <input id="address" /> <br />
+		Radius: <input id="radius" /> <br />
+		<button onClick="update()">Check</button> <br />
+		<div id="map-canvas"> </div>
 	</body>
 </html>
