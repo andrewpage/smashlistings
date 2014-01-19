@@ -33,7 +33,7 @@ class EventsController < ApplicationController
 		@min_lng = params['minLng']
 		@max_lng = params['maxLng']
 
-		@entries = Event.find_by_sql("SELECT * FROM events WHERE latitude > -300 AND latitude < 300 AND longitude > -300 AND longitude < 300" % [@min_lat, @max_lat, @min_lng, @max_lng])
+		@entries = Event.find_by_sql("SELECT * FROM events WHERE latitude > %s AND latitude < %s AND longitude > %s AND longitude < %s" % [@min_lat, @max_lat, @min_lng, @max_lng])
 		
 		render :json => @entries.to_json
 	end
