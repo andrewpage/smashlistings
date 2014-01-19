@@ -1,0 +1,9 @@
+<% content_for :header do %>
+  <%= javascript_include_tag 'admin' %>  
+<% end %>
+<h1>Find nearby events</h1>
+
+Address: <input id="address"> <br />
+Radius: <input id="radius"> <br />
+<button onClick="update()">Check</button>
+<div id="map-canvas" style="height=100%; width=100%;"> </div>

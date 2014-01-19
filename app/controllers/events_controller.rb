@@ -38,6 +38,9 @@ class EventsController < ApplicationController
 		render :json => @entries.to_json
 	end
 
+	def nearby
+	end
+
 	private
 	def event_params 
 		params.require(:event).permit(:name, :address, :time, :max_occup)

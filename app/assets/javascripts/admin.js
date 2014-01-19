@@ -1,0 +1,1 @@
+//= require_tree ./admin // requires all js files in admin folder
